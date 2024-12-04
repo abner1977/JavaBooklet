@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aa582d5-cca7-46a0-be46-fac5ab3bed40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/软件测试/软件测试.md" beforeDir="false" afterPath="$PROJECT_DIR$/软件测试/软件测试.md" afterDir="false" />
-    </list>
+    <list default="true" id="5aa582d5-cca7-46a0-be46-fac5ab3bed40" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +64,8 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Typora/Typora.exe" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -87,6 +85,8 @@
       <updated>1715421038083</updated>
       <workItem from="1715421042033" duration="1900000" />
       <workItem from="1716213383929" duration="43000" />
+      <workItem from="1733060036304" duration="136000" />
+      <workItem from="1733060507182" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="软件测试add">
       <created>1715421128023</created>
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715421128023</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改">
+      <created>1733060132548</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733060132549</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,12 +122,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="软件测试add" />
-    <option name="LAST_COMMIT_MESSAGE" value="软件测试add" />
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2" timestamp="1715421132020">
+    <state x="723" y="349" width="474" height="345" key="#com.intellij.tools.ToolEditorDialog" timestamp="1733060705440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1715421132020" />
+    <state x="723" y="349" width="474" height="345" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733060705440" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1733060659405">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1733060659405" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1733060775354">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1733060775354" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1733060775354">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1733060775354" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1733060775353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1733060775353" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1733060775354">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1733060775354" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1733060760044">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1733060760044" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1733060142163">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1733060142163" />
   </component>
 </project>
