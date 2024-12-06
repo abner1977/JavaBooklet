@@ -453,6 +453,10 @@
 >
 > 比如说 jdbc。Java 定义了一套 jdbc 的接口，但是 Java 并没有提供 jdbc 的实现类。实际上项目跑的时候，要使用 jdbc 接口的哪些实现类呢？一般来说，我们要根据自己使用的数据库，比如 mysql，你就将 mysql-jdbc-connector.jar 引入进来；oracle，你就将oracle-jdbc-connector.jar 引入进来
 >
+> - 比较常见的例子：
+>   1、数据库驱动加载接口实现类的加载、JDBC 加载不同类型数据库的驱动
+>   2、日志门面接口实现类加载、SLF4J 加载不同提供商的日志实现类
+>   3、Spring 中大量使用了SPI,比如：对servlet3.0 规范对ServletContainerInitializer 的实现、自动类型转换Type Conversion SPI(Converter SPI、Formatter SPI)等
 
 > DubboSPI
 >
@@ -460,12 +464,61 @@
 > Protocol = ExtensionLoader.getExtensionLoader(Protocol.class).getA
 > ```
 >
-> Protocol 接口，在系统运行的时候，，dubbo 会判断一下应该选用这个 Protocol 接口的哪个实现类来实例化对象来使用。它会去找一个你配置的 Protocol，将你配置的 Protocol 实现类，加载到 jvm 中来，然后实例化对象，就用你的那个 Protocol 实现类就可以了。
->   上面那行代码就是 dubbo 里大量使用的，就是对很多组件，都是保留一个接口和多个实现，然后在系统运行的时候动态根据配置去找到对应的实现类。如果你没配置，那就走默认的实现
+> 1、META-INF/dubbo 路径下.（配置接口的全限定名文件）
 >
-> Dubbo SPI 的相关逻辑被封装在了 ExtensionLoader 类 中，通过 ExtensionLoader，我们可以加载指定的实现类。Dubbo SPI 所需的配置文件需放置在 META-INF/dubbo 路径下.
+> 2、通过键值对的方式进行配置，接口的实现类，这样我们可以按需加载指定。
 >
-> 与 Java SPI 实现类配置不同，Dubbo SPI 是通过键值对的方式进行配置，这样我们可以按需加载指定的 实现类。另外，在测试 Dubbo SPI 时，需要在 Robot 接口上标注 @SPI 注解
+> 3、引入@SPI  @Adaptive @Activate 注解来扩展SPI应用场景
+>
+> 4、在生成Spi扩展实例的时候支持依赖注入
+>
+> （dubbo有一个AdaptiveExtensionFactory扩展点工程， 在内部持有了所有的factory 实现工厂，即后两个实现类。一个为SPI 工厂（依赖类是扩展接口时发挥作用，由于OrderServiceImpl中的infoService为扩展接口，所以会根据url适配infoService的实现类），一个为Spring 工厂（依赖的是springbean 时发挥作用）。于是，当我们需要为某个生成的对象注入依赖时，直接调用此对象即可。）
+>
+> ==@Acticate==
+>
+> 某种时候存在这样的情形，需要同时启用某个接口的多个实现类，如Filter 过滤器。我们希望某种条件下启用这一批实现，而另一种情况下启用那一批实现
+>
+> **Activate 注解表示一个扩展是否被激活(使用),可以放在类定义和方法上**，dubbo 用它在spi 扩展类定义上，**表示这个扩展实现激活条件和时机**。它有两个设置过滤条件的字段，group，value 都是字符数组。用来指定这个扩展类在什么条件下激活。
+>
+> 下面以com.alibaba.dubbo.rpc.filter 接口的几个扩展来说明。
+>
+> @Activate(group = {Constants.PROVIDER, Constants.CONSUMER})
+> public class testActivate1 implements Filter {}
+> //表示如果过滤器使用方（通过group 指定）属于Constants.PROVIDER（服务提供方）或者Constants.CONSUMER（服务消费方）就激活使用这个过滤器。
+>
+> //再看这个扩展
+> @Activate(group = Constants.PROVIDER, value = Constants.TOKEN_KEY)
+> public class testActivate2 implements Filter {}
+> //表示如果过滤器使用方（通过group 指定）属于Constants.PROVIDER（服务提供方）并且URL 中有参数Constants.TOKEN_KEY（token）时就激活使用这个过滤器
+>
+> ==@Adaptive==
+>
+> 扩展点对应的实现类不能在程序运行时动态指定，就是extensionLoader.getExtension 方法写死了扩展点对应的实现类.Adaptive注解，也就是dubbo 的自适应机制
+>
+> ![image-20241206165639120](img/image-20241206165639120.png)
+>
+> 现在的InfoService 的调用对象adaptiveExtension ，在
+> 当前，还只是个代理类，因此我们还有在代理内选择哪个目标实现的机会。
+>
+> 我们运行代码，会发现还真就是调用的A 实现类
+> 使用重点，URL 的格式：
+> info.service=a 的参数名格式，是接口类InfoService 的驼峰大小写拆分
+>
+> ==javaSpi缺点==
+>
+> - 所有实现类无论是否使用，直接被加载，可能存在浪费
+> - 不能够灵活控制什么时候什么时机，匹配什么实现，功能太弱。Dubbo 基于自己的需要，增强了这套SPI 机制，下面介绍Dubbo 中的SPI用法。
+>
+> ==javaSpi实现==
+>
+> 1、当服务提供者提供了接口的一种具体实现后，在jar 包的META-INF/services 目录下创建一个以“接口全限定名”为命名的文件，内容为实现类的全限定名；
+> 2、接口实现类所在的jar包放在主程序的classpath 中；
+> 3、主程序通过java.util.ServiceLoder 动态装载实现模块，它通过扫描META-INF/services 目录下的配置文件找到实现类的全限定名，把类加载到JVM；
+> 4、SPI 的实现类必须携带一个不带参数的构造方法；定义一个接口，两个实现
+>
+> ![image-20241206164746670](img/image-20241206164746670.png)
+>
+> 
 
 ## 服务暴露
 
