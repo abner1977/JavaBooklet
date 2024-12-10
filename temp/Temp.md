@@ -1,4 +1,4 @@
-学习杂记
+# 学习杂记
 
 ## 	一、基础
 
@@ -10376,6 +10376,7 @@ kafka-topics.sh --new-consumer --bootstrap-server localhost:9092 --describe --gr
        只有对类主动使用时，才会进行初始化，初始化的触发条件包括在创建类的实例时、访问类的静态方法或者静态变量时、Class.forName() 反射类时、或者某个子类被初始化时。
 
  
+
 
 
 
