@@ -2,7 +2,7 @@
 
 #### 体系结构
 
-<img src="img/体系结构.png" style="zoom:50%;" />
+<img src="img/体系结构.png"  />
 
 #### 优化思路
 
