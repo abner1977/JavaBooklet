@@ -19,7 +19,7 @@ Docker 项目的目标是**实现轻量级的操作系统虚拟化解决方案**
 
 ### 三、docker架构
 
-<img src="D:\dailySoftWare\typora\md\img\1234.png" alt="1234" style="zoom:50%;" />
+<img src="img/1234.png" alt="1234" style="zoom:50%;" />
 
 host --- 主机载体 == docker安装的地方
 

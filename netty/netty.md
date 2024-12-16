@@ -50,7 +50,7 @@ NIO 是 **面向缓冲区 ，或者面向 块 编程的编程的。**
 
 ###  NIO 的 Selector 、 Channel 和 Buffer 的关系
 
-<img src="D:\dailySoftWare\typora\md\img\TIM截图20210308155056.png" alt="TIM截图20210308155056" style="zoom:50%;" />
+<img src="img/TIM截图20210308155056.png" alt="TIM截图20210308155056" style="zoom:50%;" />
 
 1)每个 channel 都会对应一个 Buffer
 2)**Selector 对应一个线程， 一个线程对应多个 channel(连接)**
@@ -120,7 +120,7 @@ public static final int OP_ACCEPT = 1 << 4;
 
 ## NIO 非阻塞 网络编程原理分析图
 
-<img src="D:\dailySoftWare\typora\md\img\TIM截图20210316091031.png" alt="TIM截图20210316091031" style="zoom:50%;" />
+<img src="img/TIM截图20210316091031.png" alt="TIM截图20210316091031" style="zoom:50%;" />
 
 
 
@@ -187,7 +187,7 @@ Netty 线程模式(**Netty 主要基于主从 Reactor 多线程模型做了一�
 
 ### 主从Reactor多线程
 
-<img src="D:\dailySoftWare\typora\md\img\TIM截图20210316093907.png" alt="TIM截图20210316093907" style="zoom:50%;" />
+<img src="img/TIM截图20210316093907.png" alt="TIM截图20210316093907" style="zoom:50%;" />
 
 1)Reactor 主线程 **MainReactor 对象通过 select 监听连接事件, 收到事件后，通过 Acceptor 处理连接事件**
 2)当 Acceptor处理连接事件后，**MainReactor 将连接分配给 SubReactor**

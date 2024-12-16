@@ -88,6 +88,13 @@
       <workItem from="1733060036304" duration="136000" />
       <workItem from="1733060507182" duration="265000" />
       <workItem from="1733320963425" duration="729000" />
+      <workItem from="1733473973453" duration="599000" />
+      <workItem from="1733501562018" duration="43000" />
+      <workItem from="1733668837841" duration="44000" />
+      <workItem from="1733755320823" duration="1050000" />
+      <workItem from="1733833229573" duration="209000" />
+      <workItem from="1733841163547" duration="96000" />
+      <workItem from="1733921012244" duration="1583000" />
     </task>
     <task id="LOCAL-00001" summary="软件测试add">
       <created>1715421128023</created>
@@ -110,7 +117,63 @@
       <option name="project" value="LOCAL" />
       <updated>1733321005587</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="11">
+      <created>1733755614255</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755614255</updated>
+    </task>
+    <task id="LOCAL-00005" summary="11">
+      <created>1733755721509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755721509</updated>
+    </task>
+    <task id="LOCAL-00006" summary="11">
+      <created>1733755784670</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733755784670</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test">
+      <created>1733833283157</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733833283157</updated>
+    </task>
+    <task id="LOCAL-00008" summary="12">
+      <created>1733841184961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733841184961</updated>
+    </task>
+    <task id="LOCAL-00009" summary="11">
+      <created>1733921095856</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733921095856</updated>
+    </task>
+    <task id="LOCAL-00010" summary="11">
+      <created>1733930762031</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733930762031</updated>
+    </task>
+    <task id="LOCAL-00011" summary="11">
+      <created>1733930888430</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733930888430</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +194,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="软件测试add" />
     <MESSAGE value="修改" />
+    <MESSAGE value="test" />
+    <MESSAGE value="12" />
     <MESSAGE value="11" />
     <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
@@ -139,6 +204,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="349" width="474" height="345" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733060705440" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1733501605123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733501605123" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1733060659405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,9 +232,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1733060760044" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1733321012876">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1733930897919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1733321012876" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1733930897919" />
+    <state x="728" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1733930821065">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733930821065" />
+    <state x="663" y="307" key="git4idea.merge.GitPullDialog" timestamp="1733501575210">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="663" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733501575210" />
   </component>
 </project>
