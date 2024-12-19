@@ -8948,7 +8948,7 @@ commpile project(":moduleName")
 
 #### 清洁架构
 
-清洁（Clean）架构是**内部不依赖外部，而外部则依赖内部**。这种依赖包含代码名称、类的函数、变量或任何其他命名软件实体。
+清洁（Clean）架构是**内部不依赖外部，而外部则依赖 内部**。这种依赖包含代码名称、类的函数、变量或任何其他命名软件实体。
 
 #### 防腐层
 
@@ -10034,7 +10034,7 @@ public class Springboot02AmqpApplicationTests {
 
 #### 工作过程
 
-<img src="img/20190731213143387.png" alt="20190731213143387" style="zoom:50%;" />
+<img src="img/20190731213143387.png" alt="20190731213143387"  />
 
 <img src="img/微信截图_20201211160138.png" alt="微信截图_20201211160138" style="zoom:50%;" />
 
@@ -10376,6 +10376,7 @@ kafka-topics.sh --new-consumer --bootstrap-server localhost:9092 --describe --gr
        只有对类主动使用时，才会进行初始化，初始化的触发条件包括在创建类的实例时、访问类的静态方法或者静态变量时、Class.forName() 反射类时、或者某个子类被初始化时。
 
  
+
 
 
 
