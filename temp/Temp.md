@@ -10392,6 +10392,7 @@ kafka-topics.sh --new-consumer --bootstrap-server localhost:9092 --describe --gr
 
 
 
+
 如上图所示，浅绿的两个部分表示类的生命周期，就是从类的加载到类实例的创建与使用，再到类对象不再被使用时可以被 GC 卸载回收。这里要注意一点，由 Java 虚拟机自带的三种类加载器加载的类在虚拟机的整个生命周期中是不会被卸载的，只有用户自定义的类加载器所加载的类才可以被卸载
 
 ## :goal_net:网络
@@ -10737,112 +10738,6 @@ mysql : myisam 默认按照插入顺序排序 / innodb 根据主键来排序 从
 
 ## :car:框架
 
-### Spring
-
-<img src="img/TIM截图20201208164521.png" alt="TIM截图20201208164521" style="zoom:80%;" />
-
-
-
-#### 核心特性
-
-##### IOC
-
-
-
-##### spring事件(Events)
-
-
-
-##### 资源管理
-
-
-
-##### 校验
-
-
-
-##### 数据绑定
-
-
-
-##### 类型转换
-
-
-
-##### spring表达式
-
-
-
-##### 面向切面编程AOP
-
-
-
-#### 数据存储
-
-##### JDBC
-
-##### 事务抽象
-
-##### DAO支持
-
-##### ORM映射
-
-##### xml编列（xml Marshalling）
-
-
-
-#### web技术
-
-##### webServlet技术
-
-###### spring mvc
-
-###### websocket
-
-###### sockJS
-
-##### WebReactive技术
-
-###### spring webFlux
-
-###### webClient
-
-###### webSocket
-
-#### 技术整合
-
-##### 远程调用remoting
-
-##### java消息服务JMS
-
-##### java连接架构JCA
-
-##### java管理扩展JMX
-
-##### java邮件客户端
-
-##### 本地任务tasks
-
-##### 本地调度scheduling
-
-##### 缓存抽象cacheing
-
-##### spirng测试testing
-
-#### 测试
-
-##### 模拟对象Mock Objects
-
-##### TestContext框架（TestContext Framework）
-
-##### spring mvc测试
-
-##### web测试
-
-
-
-
-
 
 
 
@@ -10912,16 +10807,6 @@ mybatis比较接近原生sql
 Hibernate 对数据库结构提供了完整的封装，实现了 POJO 对象与数据库表之间的映射，能够自动生成并执行 SQL 语句。只要定义了 POJO 到数据库表的映射关系，就可以通过 Hibernate 提供的方法完成数据库操作。Hibernate 符合 JPA 规范，就是 Java 持久层 API。
 
 MyBatis 通过映射配置文件，将 SQL 所需的参数和返回的结果字段映射到指定对象，MyBatis 不会自动生成 SQL，需要自己定义 SQL 语句，不过更方便对 SQL 语句进行优化
-
-### SpringBoot
-
-
-
-### SpringCloud
-
-
-
-### Vue
 
 
 
@@ -11546,12 +11431,6 @@ ip addr  #查看ip地址
 ```
 
 
-
-
-
-
-
-## :book:资源
 
 
 
