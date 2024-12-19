@@ -95,6 +95,7 @@
       <workItem from="1733833229573" duration="209000" />
       <workItem from="1733841163547" duration="96000" />
       <workItem from="1733921012244" duration="1583000" />
+      <workItem from="1734348486859" duration="656000" />
     </task>
     <task id="LOCAL-00001" summary="软件测试add">
       <created>1715421128023</created>
@@ -228,21 +229,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1733060775354" />
+    <state x="368" y="86" key="MergeDialog" timestamp="1734348525917">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="368" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1734348525917" />
+    <state x="845" y="386" width="774" height="267" key="MultipleFileMergeDialog" timestamp="1734348527507">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="386" width="774" height="267" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1734348527507" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1733060760044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1733060760044" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1733930897919">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1734348535939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1733930897919" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1734348535939" />
     <state x="728" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1733930821065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733930821065" />
-    <state x="663" y="307" key="git4idea.merge.GitPullDialog" timestamp="1733501575210">
+    <state x="663" y="307" key="git4idea.merge.GitPullDialog" timestamp="1734348501583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="663" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1733501575210" />
+    <state x="663" y="307" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1734348501583" />
   </component>
 </project>

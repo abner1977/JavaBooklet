@@ -76,7 +76,7 @@ PUT /megacorp/employee/1
 
 倒排索引索引项包括：文档ID / 词频 TF 该单词在文档中出现的次数，用于评分 / 位置 Position 单词在文档中分词的位置 用于语句搜索 / 偏移 Offset 记录单词的开始结束位置，实现高亮显示。
 
-<img src="D:\dailySoftWare\typora\md\img\e4599b618e270df9b64a75eb77bfb326.jpg" alt="e4599b618e270df9b64a75eb77bfb326" style="zoom:50%;" />
+<img src="img/e4599b618e270df9b64a75eb77bfb326.jpg" alt="e4599b618e270df9b64a75eb77bfb326" style="zoom:50%;" />
 
 
 
