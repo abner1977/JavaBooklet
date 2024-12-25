@@ -371,7 +371,7 @@ Spring MVC：提供面向Web应用的Model-View-Controller实现。
 7、 HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet。
 8、 DispatcherServlet将ModelAndView传给ViewReslover视图解析器。 
 9、 ViewReslover解析后返回具体View。
-10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）。 公众号：Java专栏
+10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）
 11、 DispatcherServlet响应用户。 
 
 ### ***6、动态代理和静态代理***
@@ -1258,65 +1258,6 @@ file代表你实际部署目录下，新增yml文件
 
 ## 三、springcloud
 
-
-
-### ***1、Eureka***
-
-保证了AP(可用性（**A**vailability）\分区容错性（**P**artition tolerance）),无法保证C一致性（**C**onsistency）
-
-1、Eureka Server 启动成功，等待服务端注册。在启动过程中如果配置了集群，集群之间定时通过 Replicate（复制） 同步注册表，每个 Eureka Server 都存在独立完整的服务注册表信息
-
-2、Eureka Client 启动时根据配置的 Eureka Server 地址去注册中心注册服务
-
-3、Eureka Client 会每 30s 向 Eureka Server 发送一次心跳请求，证明客户端服务正常
-
-4、当 Eureka Server 90s 内没有收到 Eureka Client 的心跳，注册中心则认为该节点失效，会注销该实例
-
-5、单位时间内 Eureka Server 统计到有大量的 Eureka Client 没有上送心跳，则认为可能为网络异常，进入自我保护机制，不再剔除没有发送心跳的客户端
-
-6、当 Eureka Client 心跳请求恢复正常之后，Eureka Server 自动退出自我保护模式
-
-7、Eureka Client 定时全量或者增量从注册中心获取服务注册表，并且将获取到的信息缓存到本地
-
-8、服务调用时，Eureka Client 会先从本地缓存找寻调取的服务。如果获取不到，先从注册中心刷新注册表，再同步到本地缓存
-
-9、Eureka Client 获取到目标服务器信息，发起服务调用
-
-10、Eureka Client 程序关闭时向 Eureka Server 发送取消请求，Eureka Server 将实例从注册表中删除
-
-### ***2、Feign***
-
-是一个声明式的伪Http客户端.使用Feign，只需要创建一个接口并注解。它具有可插拔的注解特性，可使用Feign 注解和JAX-RS注解。Feign支持可插拔的编码器和解码器。Feign默认集成了Ribbon，并和Eureka结合，默认实现了负载均衡的效果。  @FeignClient    动态代理实现。
-
-基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求。
-
-<u>Feign的动态代理会根据你在接口上的 @RequestMapping 等注解，来动态构造出你要请求的服务的地址。</u>
-
-支持服务降级（配置fallbackfactory类）和异常过滤（过滤器是对异常信息的再封装，把 feign 的异常信息封装成我们系统的通用异常对象）
-
-### ***3、ribbon***
-
-是一个负载均衡客户端  @LoadBalanced 默认Round Robin 轮询算法
-
-> Ribbon 简单来说 底层采用了一个拦截器LoadBalancerIntercepor，拦截了RestTemplate发出的请求从请求ur1中获取服务名称，根据服务名称到eureka拉取服务列表，用内置负载均衡规则，从列表中选择一个，然后修改请求地址，进行真实请求。
-
-#### 负载均衡策略
-
-- 默认的实现就是ZoneAvoidanceRule，是一种轮询方案
-  RoundRobinRule   轮询来获取。
-- AvailabilityFilteringRule忽略(故障并发过高) 服务器:
-  (1)在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为
-  "短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。
-  (2)并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽
-  略。并发连接数的上限，可以由客户端的.ActiveConnectionsLimit属性进行配置
-- WeightedResponseTimeRule  权重(越大访问几率大)。
-- ZoneAvoidanceRule  分区域，使用Zone对服务器进行分类，再对Zone内的多个服务做轮询 
-- BestAvailableRule 忽略那些短路的服务器，并选择并发数较低的服务器。
-- RandomRule 随机选择一个可用的服务器。
-- RetryRule 重试机制的选择逻辑
-
-
-
 ### **4、*Zuul***
 
 的主要功能是路由转发和过滤器  zuul默认和Ribbon结合实现了负载均衡的功能， 类似于nginx转发。 @EnableZuulProxy  /  服务过滤功能
@@ -1379,27 +1320,9 @@ INCR key
 
 ### **5、*断路器*Hystrix**
 
-#### 工作流程
 
-1. 构造一个 HystrixCommand或HystrixObservableCommand对象，用于封装请求，并在构造方法配置请求被执行需要的参数；
 
-2. 执行命令，Hystrix提供了4种执行命令的方法，后面详述；
 
-3. 判断是否使用缓存响应请求，若启用了缓存，且缓存可用，直接使用缓存响应请求。Hystrix支持请求缓存，但需要用户自定义启动；
-
-4. 判断熔断器是否打开，如果打开，跳到第8步；
-
-5. 判断线程池/队列/信号量是否已满，已满则跳到第8步；
-
-6. **执行HystrixObservableCommand.construct()或HystrixCommand.run()**，如果执行失败或者超时，跳到第8步；否则，跳到第9步；
-
-7. 统计熔断器监控指标；
-
-8. 走Fallback备用逻辑
-
-9. 返回请求响应
-
-   
 
 #### 执行命令方法
 
@@ -10376,6 +10299,8 @@ kafka-topics.sh --new-consumer --bootstrap-server localhost:9092 --describe --gr
        只有对类主动使用时，才会进行初始化，初始化的触发条件包括在创建类的实例时、访问类的静态方法或者静态变量时、Class.forName() 反射类时、或者某个子类被初始化时。
 
  
+
+
 
 
 
